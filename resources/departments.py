@@ -3,7 +3,6 @@ from flask_jwt_extended import get_jwt_identity, jwt_required, get_jwt
 from sqlalchemy.exc import SQLAlchemyError
 from models import DepartmentsModel
 
-
 class Department(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument(
@@ -60,7 +59,6 @@ class Department(Resource):
         department.save_to_db()
 
         return department.json()
-
 
 class DepartmentList(Resource):
     @jwt_required(optional=True)

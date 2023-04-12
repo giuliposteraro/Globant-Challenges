@@ -3,6 +3,10 @@ import pandas as pd
 from db import db
 from sqlalchemy import create_engine, text, inspect
 import argparse
+import logging
+import datetime
+
+logging.basicConfig(filename='LOGS/backup.log', level=logging.ERROR, format="%(asctime)s %(levelname)s %(message)s")
 
 
 parser = argparse.ArgumentParser()
@@ -73,6 +77,6 @@ def sql_to_avro(table):
 if __name__ == '__main__':
     try:
      sql_to_avro(args.table_name)
-    except:
-      if args.table_name not in table_names:
-         raise Exception('The table does not exist in database')
+    except Exception as e:
+        logging.error(str(e))
+        raise Exception('The backup is not completed')
