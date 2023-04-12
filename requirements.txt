@@ -1,6 +1,6 @@
 flask
-flask_restful
+flask-restful
 flask_sqlalchemy
-flask_migrate
-flask-smorests
 python-dotenv
+flask_jwt_extended
+fastavro
