@@ -3,10 +3,12 @@ import pandas as pd
 from sqlalchemy import text, create_engine
 from flask import jsonify
 import json
+from flask_jwt_extended import get_jwt_identity, jwt_required, get_jwt
 
 engine = create_engine('sqlite:///globant.db')
 
 class Requirement2(Resource):
+    @jwt_required()
     def get(self):
         with engine.connect() as connection:
           df = pd.read_sql_query(text("SELECT * FROM view_req2"), connection)

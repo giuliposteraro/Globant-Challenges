@@ -6,3 +6,5 @@ flask_jwt_extended
 fastavro
 passlib
 flask_sqlalchemy
+pandas
+flask_migrate

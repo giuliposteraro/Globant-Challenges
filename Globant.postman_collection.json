@@ -13,7 +13,8 @@
 					{
 						"key": "Authorization",
 						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDEwMTE2LCJqdGkiOiI4ZGNjMzU0NC1iNzRjLTQ2YzYtYTg3YS05YTg5MjBhMmM0NTUiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTAxMTYsImV4cCI6MTY4MTQxMTAxNiwiaXNfYWRtaW4iOmZhbHNlfQ.4nxebzbqGZIWKZkCtCMvtTWt_i14Uh_p-SLESINdPjg",
-						"type": "default"
+						"type": "default",
+						"disabled": true
 					}
 				],
 				"body": {
@@ -26,7 +27,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/login",
+					"raw": "http://localhost:8080/login",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -54,7 +55,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:5000/jobs",
+					"raw": "http://localhost:8080/jobs",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -82,7 +83,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:5000/jobs/Staff Leader",
+					"raw": "http://localhost:8080/jobs/Staff Leader",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -106,13 +107,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDExMzA1LCJqdGkiOiI4NGM1OGI5MC0xMjYzLTQ2N2ItYWJmYS0zNzQzNmIwODA1MTYiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTEzMDUsImV4cCI6MTY4MTQxMjIwNSwiaXNfYWRtaW4iOmZhbHNlfQ.y7TQ9tXW-llNBGjKi9eianpBOiWSTXG3nBsBbNgU0bE",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDE2MjEwLCJqdGkiOiI5MTE0Nzg1Ny0xZGQ4LTRlYWUtOTQ2Ni0yMGIzNGI1MWVlZWIiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTYyMTAsImV4cCI6MTY4MTQxNzExMCwiaXNfYWRtaW4iOmZhbHNlfQ.iN_deyzddRC-vonnWhF5o9VZJ9oVqYUf0h0dBSdLdFI",
 						"type": "default"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"job\": \"Staff Member\"\n}",
+					"raw": "{\n    \"job\": \"Staff Member\"\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -120,7 +121,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/jobs/Staff Member",
+					"raw": "http://localhost:8080/jobs/Staff Member",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -149,7 +150,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:5000/jobs/Staff Member",
+					"raw": "http://localhost:8080/jobs/Staff Member",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -187,7 +188,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/jobs/188",
+					"raw": "http://localhost:8080/jobs/188",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -216,7 +217,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:5000/logout",
+					"raw": "http://localhost:8080/logout",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -227,6 +228,62 @@
 					"port": "5000",
 					"path": [
 						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get requirement 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDI0ODIyLCJqdGkiOiJjMTllMmMyYy00ZGY4LTRlMjctOWIyMS0xYjE2ZWQ1MmNmNTMiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MjQ4MjIsImV4cCI6MTY4MTQyNTcyMn0.0JiprQqCTdVlWzYrMBy1M1i4g5FcpKPfa4-kTH0tDew",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/requirement1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"requirement1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get requirement 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDI0ODIyLCJqdGkiOiJjMTllMmMyYy00ZGY4LTRlMjctOWIyMS0xYjE2ZWQ1MmNmNTMiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MjQ4MjIsImV4cCI6MTY4MTQyNTcyMn0.0JiprQqCTdVlWzYrMBy1M1i4g5FcpKPfa4-kTH0tDew",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/requirement2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"requirement2"
 					]
 				}
 			},

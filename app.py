@@ -90,7 +90,6 @@ def revoked_token_callback(jwt_header, jwt_payload):
     )
 with app.app_context():
     db.create_all()
-# JWT configuration ends
 
 api.add_resource(Job, "/jobs/<string:job>")
 api.add_resource(JobList, "/jobs")
