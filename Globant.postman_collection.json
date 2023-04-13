@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "77b703f4-8e19-41df-906c-deedf119be8f",
+		"name": "Globant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDEwMTE2LCJqdGkiOiI4ZGNjMzU0NC1iNzRjLTQ2YzYtYTg3YS05YTg5MjBhMmM0NTUiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTAxMTYsImV4cCI6MTY4MTQxMTAxNiwiaXNfYWRtaW4iOmZhbHNlfQ.4nxebzbqGZIWKZkCtCMvtTWt_i14Uh_p-SLESINdPjg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"invited\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get jobs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDE0MzM0LCJqdGkiOiI1ZTdmMWU2YS1jZDk5LTQ5YzQtOTI4ZC1iYWM1NTM2MTU5YzgiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTQzMzQsImV4cCI6MTY4MTQxNTIzNCwiaXNfYWRtaW4iOmZhbHNlfQ.1wU22pbmXRjDjEYnV_6uzdTJKc9EC7wOhCYcwZcxCLM",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/jobs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a job",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDEzNDA2LCJqdGkiOiJmN2MyMzhmYy0yYzU1LTQxNDItOTc2MC01MzA1YTAzY2U1ZTQiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTM0MDYsImV4cCI6MTY4MTQxNDMwNiwiaXNfYWRtaW4iOmZhbHNlfQ.Ic0hi9ijhTTvX4bn6s9fnNKZ8IQiNG2xzdEDnKbZG74",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/jobs/Staff Leader",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"jobs",
+						"Staff Leader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post new job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDExMzA1LCJqdGkiOiI4NGM1OGI5MC0xMjYzLTQ2N2ItYWJmYS0zNzQzNmIwODA1MTYiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTEzMDUsImV4cCI6MTY4MTQxMjIwNSwiaXNfYWRtaW4iOmZhbHNlfQ.y7TQ9tXW-llNBGjKi9eianpBOiWSTXG3nBsBbNgU0bE",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"job\": \"Staff Member\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/jobs/Staff Member",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"jobs",
+						"Staff Member"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a job by name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDExMzA1LCJqdGkiOiI4NGM1OGI5MC0xMjYzLTQ2N2ItYWJmYS0zNzQzNmIwODA1MTYiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTEzMDUsImV4cCI6MTY4MTQxMjIwNSwiaXNfYWRtaW4iOmZhbHNlfQ.y7TQ9tXW-llNBGjKi9eianpBOiWSTXG3nBsBbNgU0bE",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/jobs/Staff Member",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"jobs",
+						"Staff Member"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an existing job",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDEzNDA2LCJqdGkiOiJmN2MyMzhmYy0yYzU1LTQxNDItOTc2MC01MzA1YTAzY2U1ZTQiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTM0MDYsImV4cCI6MTY4MTQxNDMwNiwiaXNfYWRtaW4iOmZhbHNlfQ.Ic0hi9ijhTTvX4bn6s9fnNKZ8IQiNG2xzdEDnKbZG74",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"job\": \"Staff\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/jobs/188",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"jobs",
+						"188"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjgxNDE0MzM0LCJqdGkiOiI1ZTdmMWU2YS1jZDk5LTQ5YzQtOTI4ZC1iYWM1NTM2MTU5YzgiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoyLCJuYmYiOjE2ODE0MTQzMzQsImV4cCI6MTY4MTQxNTIzNCwiaXNfYWRtaW4iOmZhbHNlfQ.1wU22pbmXRjDjEYnV_6uzdTJKc9EC7wOhCYcwZcxCLM",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -10,20 +10,22 @@ class JobsModel(db.Model):
     def json(self):
         return {
             "id": self.id,
-            "job": self.job,
-            "hired_employee": self.hired_employee
+            "job": self.job
         }
 
     @classmethod
-    def find_by_name(cls, name):
-        return cls.query.filter_by(name=name).first()
+    def find_by_name(cls, job):
+        return cls.query.filter_by(job=job).first()
+    @classmethod
+    def find_by_id(cls, id):
+        return cls.query.filter_by(id=id).first()
 
     @classmethod
     def find_all(cls):
         return cls.query.all()
 
-    def save_to_db(objects):
-        db.session.add_all(objects) #this method allows to process batch transactions
+    def save_to_db(self):
+        db.session.add(self)
         db.session.commit()
 
     def delete_from_db(self):
