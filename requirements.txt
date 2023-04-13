@@ -4,3 +4,5 @@ flask_sqlalchemy
 python-dotenv
 flask_jwt_extended
 fastavro
+passlib
+flask_sqlalchemy

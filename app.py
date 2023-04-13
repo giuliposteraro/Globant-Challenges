@@ -5,13 +5,14 @@ from db import db
 from resources.jobs import Job, JobList
 from resources.hired_employee import Employee, EmployeeList
 from resources.departments import Department, DepartmentList
+from resources.req1 import Requirement1
+from resources.req2 import Requirement2
 from flask_migrate import Migrate
-import logging
-import datetime
+from resources.users import UserRegister, UserLogin, User, TokenRefresh, UserLogout
+from blocklist import BLOCKLIST
+import os
 
-logging.basicConfig(filename='LOGS/app.log', level=logging.ERROR, format="%(asctime)s %(levelname)s %(message)s")
-
-app = Flask(__name__)
+app = Flask(__name__, instance_path=os.getcwd())
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///globant.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -49,7 +50,6 @@ def check_if_token_in_blocklist(jwt_header, jwt_payload):
 
 @jwt.expired_token_loader
 def expired_token_callback(jwt_header, jwt_payload):
-    logging.error('The token has expired')
     return jsonify({"message": "The token has expired.", "error": "token_expired"}), 401
 
 
@@ -94,14 +94,20 @@ def revoked_token_callback(jwt_header, jwt_payload):
         ),
         401,
     )
-
-
+with app.app_context():
+    db.create_all()
+    app.debug = True
 # JWT configuration ends
 
-# api.add_resource(Department, "/departments/loader")
 api.add_resource(Job, "/jobs/<string:name>")
 api.add_resource(JobList, "/jobs")
 api.add_resource(Employee, "/employees/<string:name>")
 api.add_resource(EmployeeList, "/employees")
 api.add_resource(Department, "/departments/<string:name>")
 api.add_resource(DepartmentList, "/departments")
+api.add_resource(Requirement1, "/requirement1")
+api.add_resource(Requirement2, "/requirement2")
+api.add_resource(UserRegister, "/register")
+api.add_resource(UserLogin, "/login")
+api.add_resource(UserLogout, "/logout")
+api.add_resource(User, "/user/<int:user_id>")

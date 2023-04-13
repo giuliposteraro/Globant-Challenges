@@ -9,15 +9,15 @@ class HiredEmployeeModel(db.Model):
     department_id = db.Column(db.Integer, db.ForeignKey("departments.id"), nullable=True)
     department = db.relationship("DepartmentsModel", back_populates="hired_employee")
     jobs_id = db.Column(db.Integer, db.ForeignKey("jobs.id"), nullable=True)
-    jobs = db.relationship("JobsModel", back_populates="hired_employee")
+    job = db.relationship("JobsModel", back_populates="hired_employee")
 
     def json(self):
         return {
             "id": self.id,
             "name": self.name,
             "datetime": self.datetime,
-            "department": self.department.json(),
-            "jobs": [job.json() for job in self.jobs.all()],
+            "department": self.department_id,
+            "job": self.jobs_id
         }
 
     @classmethod

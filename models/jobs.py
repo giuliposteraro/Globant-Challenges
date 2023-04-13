@@ -22,9 +22,8 @@ class JobsModel(db.Model):
     def find_all(cls):
         return cls.query.all()
 
-    def save_to_db(self):
-        db.session.add(self)
-        db.session.bulk_update_mappings(self)
+    def save_to_db(objects):
+        db.session.add_all(objects) #this method allows to process batch transactions
         db.session.commit()
 
     def delete_from_db(self):

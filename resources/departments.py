@@ -68,6 +68,6 @@ class DepartmentList(Resource):
         if user_id:
             return {"items": departments}, 200
         return {
-            "departments": [department["name"] for department in departments],
+            "departments": [{"id": department["id"],"name": department["name"]} for department in departments],
             "message": "More data available if you log in.",
         }, 200

@@ -1,10 +1,9 @@
-from fastavro import writer, parse_schema, schema
+from fastavro import writer, parse_schema
 import pandas as pd
 from db import db
-from sqlalchemy import create_engine, text, inspect
+from sqlalchemy import create_engine, text
 import argparse
 import logging
-import datetime
 
 logging.basicConfig(filename='LOGS/backup.log', level=logging.ERROR, format="%(asctime)s %(levelname)s %(message)s")
 
@@ -12,7 +11,7 @@ logging.basicConfig(filename='LOGS/backup.log', level=logging.ERROR, format="%(a
 parser = argparse.ArgumentParser()
 parser.add_argument("table_name", help="name of the table to do a backup")
 args = parser.parse_args()
-engine = create_engine('sqlite:///globant.db')
+
 
 schema_departments = {
     'doc': 'departments',
@@ -55,9 +54,6 @@ schema_hired_employees = {
 
 parsed_hired_employees = parse_schema(schema_hired_employees)
 
-inspector = inspect(engine)
-# Get a list of all the table names in the database
-table_names = inspector.get_table_names()
 
 def sql_to_avro(table):
     with engine.connect() as connection:
@@ -76,7 +72,9 @@ def sql_to_avro(table):
 
 if __name__ == '__main__':
     try:
+     engine = create_engine('sqlite:///globant.db')
      sql_to_avro(args.table_name)
+     engine.dispose()
     except Exception as e:
         logging.error(str(e))
         raise Exception('The backup is not completed')

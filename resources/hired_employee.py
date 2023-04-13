@@ -68,8 +68,8 @@ class EmployeeList(Resource):
         user_id = get_jwt_identity()
         employees = [employee.json() for employee in HiredEmployeeModel.find_all()]
         if user_id:
-            return {"items": employees}, 200
+            return {"employees": employees}, 200
         return {
-            "employees": [employee["name"] for employee in employees],
+            "employees": [{"id": employee["id"],"employee": employee["name"], "datetime": employee["datetime"], "department": employee["department"], "job": employee["job"]} for employee in employees],
             "message": "More data available if you log in.",
         }, 200

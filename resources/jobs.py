@@ -26,14 +26,16 @@ class Job(Resource):
 
         data = self.parser.parse_args()
 
-        job = JobsModel(name=name, **data)
+        #job = JobsModel(name=name, **data)
+        record = {'name': name, **data}
 
         try:
-            job.save_to_db()
+            #job.save_to_db()
+            self.save_to_db([record])
         except SQLAlchemyError:
             return {"message": "An error occurred while inserting the item."}, 500
 
-        return job.json(), 201
+        return record, 201
 
     @jwt_required()
     def delete(self, name):
@@ -68,8 +70,8 @@ class JobList(Resource):
         user_id = get_jwt_identity()
         jobs = [job.json() for job in JobsModel.find_all()]
         if user_id:
-            return {"items": jobs}, 200
+            return {"jobs": jobs}, 200
         return {
-            "jobs": [job["name"] for job in jobs],
+            "jobs": [{"id": job["id"],"job": job["job"]} for job in jobs],
             "message": "More data available if you log in.",
         }, 200

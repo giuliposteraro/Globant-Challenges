@@ -2,7 +2,6 @@ import pandas as pd
 import argparse
 from sqlalchemy import create_engine
 import logging
-import datetime
 
 logging.basicConfig(filename='LOGS/historic_data.log', level=logging.ERROR, format="%(asctime)s %(levelname)s %(message)s")
 
@@ -26,7 +25,7 @@ def load_model(table):
 
 
 if __name__ == '__main__':
-    engine = create_engine('sqlite:///globant.db')
+    engine = create_engine('sqlite:///instance/globant.db')
     try: 
         load_model(args.table_name)
         engine.dispose()
