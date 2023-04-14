@@ -55,6 +55,6 @@ Then, in the file "Globant.postman_collection.json" you can find examples of end
 
 # Challenge 2
 
-Run `GET http://localhost:8080/requirement1` to obtain the first requirement result. In addition, you can find a csv file with the result with the name "result_req1.csv" in this repository
+Run `GET http://localhost:8080/requirement1` to obtain the first requirement result. In addition, when you run this command, it generates a csv file with the result with the name "result_req1.csv" in this repository
 
-Run `GET http://localhost:8080/requirement2` to obtain the second requirement result. As the same of the requirement 1, you can find a csv file with the result with the name "result_req2.csv"
+Run `GET http://localhost:8080/requirement2` to obtain the second requirement result. As the same of the requirement 1, it generates a csv file with the result with the name "result_req2.csv"
